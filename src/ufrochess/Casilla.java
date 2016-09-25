@@ -35,6 +35,7 @@ public class Casilla extends JButton implements MouseListener {
     
     public void fijaPieza(Pieza p){
         this.miPieza = p;
+        //NO ME QUEDA CLARO QUE HACE ESTE ESCUCHADOR
         this.addComponentListener(p);
     }
     

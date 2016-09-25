@@ -5,6 +5,7 @@ import java.awt.event.MouseListener;
 import java.awt.event.ComponentListener;
 import java.awt.event.ComponentEvent;
 import java.util.Iterator;
+import javax.swing.ImageIcon;
 /**
  *
  * @author Carlos Cares para Ingeniería de Software
@@ -14,6 +15,7 @@ public abstract class Pieza implements ComponentListener {
     protected Casilla micasilla=null;
     public boolean esBlanca = true;
     public boolean esNegra = false;
+    protected ImageIcon imagenPieza;
 
 
     public Pieza() {
@@ -33,7 +35,13 @@ public abstract class Pieza implements ComponentListener {
         this.ubicar(this.micasilla);
     }
     
-    public abstract void ubicar(Casilla c);
+    public void ubicar(Casilla c){
+        if(c!=null){
+        c.setIcon(this.imagenPieza);
+        }else{
+            System.out.println("La casilla no existe");
+        }
+    };
     
     public abstract LinkedList<Casilla> alcance();
 

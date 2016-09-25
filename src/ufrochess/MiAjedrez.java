@@ -12,16 +12,12 @@ public class MiAjedrez extends JPanel {
         private Color casillaNegra;
         
         public MiAjedrez() {
-            super();
+            
             this.casillaBlanca = new Color(218,247,166);
             this.casillaNegra = new Color(144,12,63);
             this.casi = new Casilla[64];
-            this.setSize(400,300);
-            this.setLocation(100,100);
             this.setLayout(new GridLayout(8,8));
             this.creaCasillas();
-            //this.setVisible(true);
-            //this.addWindowListener(this);
         }
         
         private void creaCasillas() {

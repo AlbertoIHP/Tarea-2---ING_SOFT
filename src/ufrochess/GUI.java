@@ -29,10 +29,8 @@ public class GUI extends JFrame implements WindowListener{
         
          //REALIZANDO UNA MODIFICACION Y DEJANDO MIAJEDREZ COMO UN JPANEL, ESTE PUEDE SER INTRODUCIDO EN CUALQUEIR JFRAME (VENTANA)
         tablero = new MiAjedrez();
-        Torre t = new Torre();
-        Torre q = new Torre();
-        t.fijaColorNegro();
-        q.fijaColorNegro();
+        Torre t = new Torre("negro");
+        Torre q = new Torre("negro");
         tablero.ponerPieza("c4", t);
         tablero.ponerPieza("c6", q);
         this.add(tablero, BorderLayout.CENTER);
@@ -49,7 +47,7 @@ public class GUI extends JFrame implements WindowListener{
         
        
         this.setVisible(true); // mostramos la ventana 
-        this.pack(); // la ajustamos 
+        //this.pack(); // la ajustamos 
         
         //Como esta clase tiene un rol de escuchador de ventana entonces, le podemos decir que se escuche a si misma para reaccionar
         this.addWindowListener(this);
