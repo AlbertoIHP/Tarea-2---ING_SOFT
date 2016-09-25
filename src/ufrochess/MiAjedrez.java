@@ -52,6 +52,7 @@ public class MiAjedrez extends JPanel {
     public boolean ponerPieza(String posicion, Pieza p){
         Casilla cas = this.enPosicion(posicion);
         if (cas!=null)
+            p.micasilla = cas;
             p.ubicar(cas);
         return cas!=null;
     }

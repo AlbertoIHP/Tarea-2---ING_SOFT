@@ -66,7 +66,7 @@ public class Casilla extends JButton implements MouseListener {
             while(it.hasNext()){
                 c = (Casilla)it.next();
                 c.ilumina();
-            }
+           }
         }
     }
     

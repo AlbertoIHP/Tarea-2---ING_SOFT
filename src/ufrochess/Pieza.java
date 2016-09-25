@@ -25,19 +25,19 @@ public abstract class Pieza implements ComponentListener {
     public void fijaColorBlanco() {
         this.esBlanca = true;
         this.esNegra = false;
-        this.ubicar(this.micasilla);
         
     }
     
     public void fijaColorNegro() {
         this.esBlanca = false;
         this.esNegra = true;
-        this.ubicar(this.micasilla);
     }
     
     public void ubicar(Casilla c){
         if(c!=null){
-        c.setIcon(this.imagenPieza);
+            c.setIcon(this.imagenPieza);
+            c.fijaPieza(this);
+            this.micasilla = c;
         }else{
             System.out.println("La casilla no existe");
         }

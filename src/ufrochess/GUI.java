@@ -47,7 +47,7 @@ public class GUI extends JFrame implements WindowListener{
         
        
         this.setVisible(true); // mostramos la ventana 
-        //this.pack(); // la ajustamos 
+        this.pack(); // la ajustamos 
         
         //Como esta clase tiene un rol de escuchador de ventana entonces, le podemos decir que se escuche a si misma para reaccionar
         this.addWindowListener(this);

@@ -35,7 +35,7 @@ public class PanelNumeros extends JPanel{
     
     public void crearNumeros(){
         
-        for (int i = 0; i < 8; i++) {
+        for (int i = 7; i >= 0; i--) {
             //Creamos el nuevo boton
             this.numeros[i] = new JButton();
             

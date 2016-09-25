@@ -15,19 +15,19 @@ public class Torre extends Pieza {
     public Torre(String color) {
         
         if(color.equals("negro")){
-            super.fijaColorNegro();
+            this.fijaColorNegro();
         }else if(color.equals("blanco")){
-            super.fijaColorBlanco();
+            this.fijaColorBlanco();
         }
         
         ImageIcon g;
-        if (super.esBlanca) {
+        if (this.esBlanca) {
             g = new ImageIcon(this.imagenes[0]);
         } else {
             g = new ImageIcon(this.imagenes[1]);
         }
         g = new ImageIcon(g.getImage().getScaledInstance(50,50,java.awt.Image.SCALE_REPLICATE));
-        super.imagenPieza = g;
+        this.imagenPieza = g;
     }
 
 
@@ -72,6 +72,7 @@ public class Torre extends Pieza {
                 }
             }
         }
+        System.out.println(h);
         return h;
     }
 }
