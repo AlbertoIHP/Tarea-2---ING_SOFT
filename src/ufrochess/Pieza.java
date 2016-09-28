@@ -21,6 +21,23 @@ public abstract class Pieza implements ComponentListener {
     public Pieza() {
     }
     
+    protected void definirImagen(String[] imagenes, String color){
+        if(color.equals("negro")){
+            this.fijaColorNegro();
+        }else if(color.equals("blanco")){
+            this.fijaColorBlanco();
+        }
+        
+        ImageIcon g;
+        if (this.esBlanca) {
+            g = new ImageIcon(imagenes[0]);
+        } else {
+            g = new ImageIcon(imagenes[1]);
+        }
+        g = new ImageIcon(g.getImage().getScaledInstance(50,50,java.awt.Image.SCALE_REPLICATE));
+        this.imagenPieza = g;
+    }
+    
     
     public void fijaColorBlanco() {
         this.esBlanca = true;
@@ -42,6 +59,7 @@ public abstract class Pieza implements ComponentListener {
             System.out.println("La casilla no existe");
         }
     };
+    
     
     public abstract LinkedList<Casilla> alcance();
 

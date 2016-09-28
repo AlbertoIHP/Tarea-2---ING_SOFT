@@ -10,24 +10,10 @@ import java.util.LinkedList;
  * @author Carlos Cares para Ingeniería de Software
  */
 public class Torre extends Pieza {
-    private String[] imagenes = {"src/ufrochess/images/aatorreB.png", "src/ufrochess/images/aatorreNt.png"};
+    private String[] imagenes = {"src/ufrochess/images/torre_blanca.png", "src/ufrochess/images/torre_negra.png"};
     
     public Torre(String color) {
-        
-        if(color.equals("negro")){
-            this.fijaColorNegro();
-        }else if(color.equals("blanco")){
-            this.fijaColorBlanco();
-        }
-        
-        ImageIcon g;
-        if (this.esBlanca) {
-            g = new ImageIcon(this.imagenes[0]);
-        } else {
-            g = new ImageIcon(this.imagenes[1]);
-        }
-        g = new ImageIcon(g.getImage().getScaledInstance(50,50,java.awt.Image.SCALE_REPLICATE));
-        this.imagenPieza = g;
+        super.definirImagen(imagenes, color);
     }
 
 
@@ -45,6 +31,12 @@ public class Torre extends Pieza {
                 k = this.micasilla.casillaEnPos(letra, i);
                 if (sigue = k.vacia()) {
                     h.add(k);
+                }else if(sigue = (k.getMiPieza().esBlanca && this.esBlanca)){
+                    break;
+                }else if(sigue = (k.getMiPieza().esNegra && this.esNegra)){
+                    break;
+                }else{
+                    h.add(k);
                 }
             }
             //retrocede
@@ -52,6 +44,12 @@ public class Torre extends Pieza {
             for (int i = num - 1; i > 0 && sigue; i--) {
                 k = this.micasilla.casillaEnPos(letra, i);
                 if (sigue = k.vacia()) {
+                    h.add(k);
+                }else if(sigue = (k.getMiPieza().esBlanca && this.esBlanca)){
+                    break;
+                }else if(sigue = (k.getMiPieza().esNegra && this.esNegra)){
+                    break;
+                }else{
                     h.add(k);
                 }
             }
@@ -61,6 +59,12 @@ public class Torre extends Pieza {
                 k = this.micasilla.casillaEnPos(c, num);
                 if (sigue = k.vacia()) {
                     h.add(k);
+                }else if(sigue = (k.getMiPieza().esBlanca && this.esBlanca)){
+                    break;
+                }else if(sigue = (k.getMiPieza().esNegra && this.esNegra)){
+                    break;
+                }else{
+                    h.add(k);
                 }
             }
             //costado izquierdo
@@ -68,6 +72,12 @@ public class Torre extends Pieza {
             for (char c = (char) (letra - 1); c >= 'a' && sigue; c--) {
                 k = this.micasilla.casillaEnPos(c, num);
                 if (sigue = k.vacia()) {
+                    h.add(k);
+                }else if(sigue = (k.getMiPieza().esBlanca && this.esBlanca)){
+                    break;
+                }else if(sigue = (k.getMiPieza().esNegra && this.esNegra)){
+                    break;
+                }else{
                     h.add(k);
                 }
             }
